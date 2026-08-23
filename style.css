@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Bolas Store — CSS Totalmente Responsivo e Otimizado
+   Bolas Store — Estilos Completos e Responsivos (Anti-Bug Mobile)
    ========================================================================== */
 
 :root {
@@ -19,7 +19,6 @@
   --green-whatsapp: #25d366;
   --green-hover: #1eae53;
 
-  /* Raridades */
   --rarity-comum: #9e9e9e;
   --rarity-incomum: #2baf2b;
   --rarity-rara: #0070dd;
@@ -32,7 +31,6 @@
   --transition: all 0.25s ease-in-out;
 }
 
-/* Reset Global anti-bug de tela no celular */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -45,7 +43,7 @@ html, body {
   overflow-x: hidden;
   background-color: var(--bg-dark);
   color: var(--text-main);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
 }
@@ -55,7 +53,6 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   word-wrap: break-word;
 }
 
-/* Container Responsivo Correto */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -99,7 +96,6 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   font-size: 1.25rem;
   font-weight: 800;
   color: #fff;
-  letter-spacing: -0.5px;
 }
 
 .logo-accent {
@@ -186,7 +182,7 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   color: #fff;
 }
 
-/* Background Cyberpunk Grid */
+/* Background Cyber Grid */
 .tech-grid-bg {
   position: fixed;
   inset: 0;
@@ -198,7 +194,7 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   z-index: -1;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   padding: 110px 0 50px;
   text-align: center;
@@ -320,12 +316,22 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
 }
 
 .search-box {
+  position: relative;
   width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
 
 .search-input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 16px 12px 38px;
   background: var(--bg-input);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -336,6 +342,18 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
 
 .search-input:focus {
   border-color: var(--primary);
+}
+
+.search-hint {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--text-muted);
 }
 
 .filter-group {
@@ -362,7 +380,7 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   margin-bottom: 20px;
 }
 
-/* Grid de Produtos (Arrumado para Mobile) */
+/* Grid de Frutas */
 .fruits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -377,8 +395,12 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   transition: var(--transition);
+}
+
+.fruit-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
 }
 
 .fruit-image-wrap {
@@ -406,7 +428,7 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   text-transform: uppercase;
 }
 
-/* Raras e Míticas com destaque */
+/* Raridades */
 .rarity-comum .fruit-badge { background: rgba(158, 158, 158, 0.2); color: var(--rarity-comum); }
 .rarity-incomum .fruit-badge { background: rgba(43, 175, 43, 0.2); color: var(--rarity-incomum); }
 .rarity-rara .fruit-badge { background: rgba(0, 112, 221, 0.2); color: var(--rarity-rara); }
@@ -560,60 +582,25 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   color: var(--text-muted);
 }
 
-/* Media Queries para Computadores / Telas Maiores */
+/* Responsividade desktop */
 @media (min-width: 640px) {
-  .filters {
-    flex-direction: row;
-  }
-  
-  .search-box {
-    flex: 1;
-  }
-
-  .filter-group {
-    width: auto;
-  }
-
-  .fruits-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-  }
-
-  .fruit-card {
-    padding: 16px;
-  }
-
-  .fruit-name {
-    font-size: 1.1rem;
-  }
-
-  .fruit-price {
-    font-size: 1.3rem;
-  }
-
-  .steps, .trust-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
+  .filters { flex-direction: row; }
+  .search-box { flex: 1; }
+  .filter-group { width: auto; }
+  .fruits-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+  .fruit-card { padding: 16px; }
+  .fruit-name { font-size: 1.1rem; }
+  .fruit-price { font-size: 1.3rem; }
+  .steps, .trust-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 }
 
 @media (min-width: 768px) {
-  .hero {
-    padding: 150px 0 80px;
-  }
-
-  .footer-inner {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
+  .hero { padding: 150px 0 80px; }
+  .footer-inner { display: grid; grid-template-columns: 2fr 1fr; }
 }
 
-/* Ajustes Específicos para Menu Mobile */
 @media (max-width: 639px) {
-  .menu-toggle {
-    display: flex;
-  }
-
+  .menu-toggle { display: flex; }
   .nav {
     position: fixed;
     top: 65px;
@@ -626,16 +613,7 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
     transform: translateY(-150%);
     transition: var(--transition);
   }
-
-  .nav.open {
-    transform: translateY(0);
-  }
-
-  .hero-cta {
-    flex-direction: column;
-  }
-
-  .hero-cta .btn {
-    width: 100%;
-  }
+  .nav.open { transform: translateY(0); }
+  .hero-cta { flex-direction: column; }
+  .hero-cta .btn { width: 100%; }
 }
