@@ -1,6 +1,6 @@
 /**
  * Bolas Store — Script Oficial
- * Lista de Frutas com Preço Original e Preço Blox Fruit Riscado
+ * Sistema Dinâmico, Animação Tech Canvas de Conexão de Partículas e Filtros Inteligentes
  */
 
 const FRUITS = [
@@ -56,13 +56,14 @@ const FRUITS = [
   { id: 41, nome: "Dragon", categoria: "Mítica", precoLoja: 220.00, precoBlox: 311.00, emoji: "🐉" }
 ];
 
-/* DOM elements */
+/* Elementos do DOM */
 const fruitsGrid = document.getElementById("fruitsGrid");
 const emptyState = document.getElementById("emptyState");
 const resultsCount = document.getElementById("resultsCount");
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
 const sortSelect = document.getElementById("sortSelect");
+const clearFiltersBtn = document.getElementById("clearFilters");
 const menuToggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
 const header = document.getElementById("header");
@@ -168,7 +169,7 @@ function getFilteredFruits() {
       result.sort((a, b) => calcDiscount(b.precoLoja, b.precoBlox) - calcDiscount(a.precoLoja, a.precoBlox));
       break;
     case "name-asc":
-      result.sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
+      result.sort((a, b) => a.nome.localeCompare(a.nome, "pt-BR"));
       break;
     case "name-desc":
       result.sort((a, b) => b.nome.localeCompare(a.nome, "pt-BR"));
@@ -180,6 +181,13 @@ function getFilteredFruits() {
 
 function applyFilters() {
   renderFruits(getFilteredFruits());
+}
+
+function resetFilters() {
+  searchInput.value = "";
+  categoryFilter.value = "all";
+  sortSelect.value = "default";
+  applyFilters();
 }
 
 function openWhatsApp(fruta) {
@@ -209,6 +217,7 @@ function observeCards() {
   document.querySelectorAll(".fruit-card:not(.visible)").forEach((card) => cardObserver.observe(card));
 }
 
+/* Animação Tecnológica Interativa de Fundo no Canvas */
 function initParticles() {
   const canvas = document.getElementById("particles");
   if (!canvas) return;
@@ -216,7 +225,7 @@ function initParticles() {
   if (!ctx) return;
 
   let particles = [];
-  let width = 0, height = 0, animationFrame;
+  let width = 0, height = 0;
 
   function resize() {
     const hero = canvas.parentElement;
@@ -233,24 +242,46 @@ function initParticles() {
   }
 
   function createParticles() {
-    const count = Math.min(50, Math.max(20, Math.floor((width * height) / 18000)));
+    const count = Math.min(60, Math.max(25, Math.floor((width * height) / 15000)));
     particles = [];
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        r: Math.random() * 1.8 + 0.4,
-        speedX: (Math.random() - 0.5) * 0.25,
-        speedY: (Math.random() - 0.5) * 0.25,
-        opacity: Math.random() * 0.4 + 0.1
+        r: Math.random() * 2 + 0.5,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4,
+        opacity: Math.random() * 0.5 + 0.2
       });
     }
   }
 
   function draw() {
     ctx.clearRect(0, 0, width, height);
+
+    // Desenhar linhas de conexão tech
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 110) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(255, 0, 60, ${0.15 * (1 - dist / 110)})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Desenhar partículas
     particles.forEach((p) => {
-      p.x += p.speedX; p.y += p.speedY;
+      p.x += p.speedX;
+      p.y += p.speedY;
+
       if (p.x < 0) p.x = width;
       if (p.x > width) p.x = 0;
       if (p.y < 0) p.y = height;
@@ -261,7 +292,8 @@ function initParticles() {
       ctx.fillStyle = `rgba(255, 0, 60, ${p.opacity})`;
       ctx.fill();
     });
-    animationFrame = requestAnimationFrame(draw);
+
+    requestAnimationFrame(draw);
   }
 
   resize();
@@ -301,6 +333,18 @@ function initEvents() {
     sortSelect.addEventListener("change", applyFilters);
   }
 
+  if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener("click", resetFilters);
+  }
+
+  // Atalho de teclado '/' para focar na busca
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/" && document.activeElement !== searchInput) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+
   if (fruitsGrid) {
     fruitsGrid.addEventListener("click", (event) => {
       const button = event.target.closest(".btn-buy");
@@ -330,4 +374,3 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeader();
   initParticles();
 });
-      
