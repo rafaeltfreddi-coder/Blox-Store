@@ -1,4 +1,4 @@
-// Dados das Frutas
+// Lista completa de Frutas
 const fruits = [
   { id: 1, name: "Kitsune", rarity: "Mítica", price: 35.00, oldPrice: 45.00, emoji: "🦊" },
   { id: 2, name: "Dragon", rarity: "Mítica", price: 30.00, oldPrice: 40.00, emoji: "🐉" },
@@ -17,60 +17,38 @@ const fruits = [
   { id: 15, name: "Ice", rarity: "Incomum", price: 3.00, oldPrice: 4.00, emoji: "🧊" }
 ];
 
-// Configurações do WhatsApp
-const PHONE_NUMBER = "5511999999999"; // Substitua pelo seu número real (ex: 55 + DDD + Numero)
+// Configure seu número do WhatsApp aqui (DDD + Número)
+const PHONE_NUMBER = "5511999999999"; 
 
-// Elementos DOM
-const fruitsGrid = document.getElementById("fruits-grid");
-const searchInput = document.getElementById("search-input");
-const rarityFilter = document.getElementById("rarity-filter");
-const sortFilter = document.getElementById("sort-filter");
-const resultsCount = document.getElementById("results-count");
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-// Inicialização
-document.addEventListener("DOMContentLoaded", () => {
-  renderFruits(fruits);
-  setupEvents();
-});
-
-// Eventos
-function setupEvents() {
-  searchInput.addEventListener("input", filterAndRender);
-  rarityFilter.addEventListener("change", filterAndRender);
-  sortFilter.addEventListener("change", filterAndRender);
-
-  // Menu Mobile Toggle
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
-    });
-  }
-}
-
-// Renderizar Produtos
+// Renderização Principal do Catálogo
 function renderFruits(data) {
+  const fruitsGrid = document.getElementById("fruits-grid");
+  const resultsCount = document.getElementById("results-count");
+
+  if (!fruitsGrid) return;
+
   fruitsGrid.innerHTML = "";
 
-  if (data.length === 0) {
+  if (!data || data.length === 0) {
     fruitsGrid.innerHTML = `
       <div class="empty-state">
-        <p>Nenhuma fruta encontrada com estes filtros.</p>
+        <p>Nenhuma fruta encontrada para essa busca.</p>
       </div>
     `;
-    resultsCount.textContent = "0 frutas encontradas";
+    if (resultsCount) resultsCount.textContent = "0 frutas encontradas";
     return;
   }
 
-  resultsCount.textContent = `Mostrando ${data.length} fruta(s)`;
+  if (resultsCount) {
+    resultsCount.textContent = `Mostrando ${data.length} fruta(s)`;
+  }
 
   data.forEach((fruit) => {
     const rarityClass = `rarity-${fruit.rarity.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`;
     const discount = Math.round(((fruit.oldPrice - fruit.price) / fruit.oldPrice) * 100);
 
     const card = document.createElement("div");
-    card.className = `fruit-card ${rarityClass}`;
+    card.className = `fruit-card ${rarityClass} visible`;
 
     card.innerHTML = `
       <div>
@@ -99,11 +77,15 @@ function renderFruits(data) {
   });
 }
 
-// Filtro e Ordenação
+// Filtro e Busca
 function filterAndRender() {
-  const searchTerm = searchInput.value.toLowerCase();
-  const selectedRarity = rarityFilter.value;
-  const selectedSort = sortFilter.value;
+  const searchInput = document.getElementById("search-input");
+  const rarityFilter = document.getElementById("rarity-filter");
+  const sortFilter = document.getElementById("sort-filter");
+
+  const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : "";
+  const selectedRarity = rarityFilter ? rarityFilter.value : "all";
+  const selectedSort = sortFilter ? sortFilter.value : "default";
 
   let filtered = fruits.filter((fruit) => {
     const matchesSearch = fruit.name.toLowerCase().includes(searchTerm);
@@ -122,10 +104,38 @@ function filterAndRender() {
   renderFruits(filtered);
 }
 
-// Função de Compra via WhatsApp
+// Função de Redirecionamento para Compra via WhatsApp
 function buyFruit(name, price) {
   const message = encodeURIComponent(
-    `Olá! Tenho interesse em comprar a fruta *${name}* por *R$ ${price.toFixed(2)}* na Bolas Store.`
+    `Olá! Vim pelo site da Bolas Store e gostaria de comprar a fruta: *${name}* por *R$ ${price.toFixed(2)}*.`
   );
   window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, "_blank");
+}
+
+// Inicializador Único do Sistema
+function init() {
+  renderFruits(fruits);
+
+  const searchInput = document.getElementById("search-input");
+  const rarityFilter = document.getElementById("rarity-filter");
+  const sortFilter = document.getElementById("sort-filter");
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (searchInput) searchInput.addEventListener("input", filterAndRender);
+  if (rarityFilter) rarityFilter.addEventListener("change", filterAndRender);
+  if (sortFilter) sortFilter.addEventListener("change", filterAndRender);
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+  }
+}
+
+// Executa ao carregar o DOM
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
 }
