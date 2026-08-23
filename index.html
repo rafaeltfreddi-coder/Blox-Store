@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bolas Store — As Melhores Frutas do Blox Fruits</title>
+  <title>Bolas Store — Frutas Blox Fruits</title>
   
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
   
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background Tecnológico -->
   <div class="tech-grid-bg"></div>
 
-  <!-- Header / Nav -->
+  <!-- Header -->
   <header class="header" id="header">
     <div class="container header-inner">
       <a href="#" class="logo">
@@ -45,12 +42,12 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-content">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        <span>Entrega rápida no jogo</span>
+        <span>Entrega rápida no jogo via Trade</span>
       </div>
       
       <h1 class="hero-title">
@@ -58,7 +55,7 @@
       </h1>
       
       <p class="hero-subtitle">
-        Compre suas frutas com total segurança e os melhores preços do mercado. Receba direto no seu inventário via trade.
+        Compre suas frutas com total segurança e os melhores preços do mercado. Receba direto no seu inventário!
       </p>
 
       <div class="hero-cta">
@@ -94,10 +91,11 @@
         <p class="section-subtitle">Filtre por nome ou raridade para encontrar o que precisa</p>
       </div>
 
-      <!-- Filtros e Busca -->
       <div class="filters">
         <div class="search-box">
+          <span class="search-icon">🔍</span>
           <input type="text" id="search-input" class="search-input" placeholder="Buscar fruta...">
+          <span class="search-hint">Ctrl K</span>
         </div>
 
         <div class="filter-group">
@@ -121,10 +119,7 @@
 
       <div class="results-count" id="results-count">Mostrando todas as frutas</div>
 
-      <!-- Grid de Cards -->
-      <div class="fruits-grid" id="fruits-grid">
-        <!-- Renderizado dinamicamente via JS -->
-      </div>
+      <div class="fruits-grid" id="fruits-grid"></div>
     </div>
   </section>
 
@@ -210,7 +205,6 @@
     </div>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
