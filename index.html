@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nexus Fruits — Loja premium de Devil Fruits do Blox Fruits. Preços competitivos, entrega rápida via WhatsApp e catálogo completo.">
-  <meta name="theme-color" content="#0b0b16">
-  <title>Nexus Fruits | Loja Premium de Blox Fruits</title>
+  <meta name="description" content="Bolas Store — A melhor loja de Devil Fruits do Blox Fruits. Preços promocionais, entrega rápida via WhatsApp e catálogo completo.">
+  <meta name="theme-color" content="#0a0505">
+  <title>Bolas Store | Loja Oficial Blox Fruits</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
@@ -14,19 +14,19 @@
 <body>
   <header class="header" id="header">
     <div class="container header-inner">
-      <a href="#inicio" class="logo" aria-label="Nexus Fruits — Página inicial">
+      <a href="#inicio" class="logo" aria-label="Bolas Store — Página inicial">
         <span class="logo-mark" aria-hidden="true">
           <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="16" r="14" stroke="url(#lg)" stroke-width="2.5"/>
             <path d="M16 8v8l5 3" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/>
             <defs>
               <linearGradient id="lg" x1="0" y1="0" x2="32" y2="32">
-                <stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b82f6"/>
+                <stop stop-color="#ff003c"/><stop offset="1" stop-color="#990000"/>
               </linearGradient>
             </defs>
           </svg>
         </span>
-        <span class="logo-text">Nexus<span class="logo-accent">Fruits</span></span>
+        <span class="logo-text">Bolas<span class="logo-accent">Store</span></span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Menu principal">
@@ -37,7 +37,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="#frutas" class="btn btn-primary btn-sm">Ver Frutas</a>
+        <a href="#frutas" class="btn btn-primary btn-sm">Ver Ofertas</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -55,20 +55,18 @@
       <div class="container hero-content">
         <p class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Loja premium de Devil Fruits
+          Melhores preços em Devil Fruits
         </p>
         <h1 class="hero-title">
-          As melhores frutas do<br>
-          <span class="gradient-text">Blox Fruits</span><br>
-          pelo melhor preço!
+          Frutas do <span class="gradient-text">Blox Fruits</span><br>
+          com descontos imperdíveis!
         </h1>
         <p class="hero-subtitle">
-          Catálogo completo, preços abaixo do mercado e entrega rápida via WhatsApp.
-          Compre com segurança e suporte dedicado.
+          Compare os preços oficiais com o valor promocional da Bolas Store. Economize de verdade e receba rápido no WhatsApp!
         </p>
         <div class="hero-cta">
           <a href="#frutas" class="btn btn-primary btn-lg">
-            Comprar agora
+            Aproveitar Descontos
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -77,24 +75,24 @@
         </div>
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-value" data-count="38">0</span>
+            <span class="stat-value" data-count="40">40</span>
             <span class="stat-label">Frutas</span>
           </div>
           <div class="stat-divider" aria-hidden="true"></div>
           <div class="stat">
             <span class="stat-value">24h</span>
-            <span class="stat-label">Suporte</span>
+            <span class="stat-label">Atendimento</span>
           </div>
           <div class="stat-divider" aria-hidden="true"></div>
           <div class="stat">
             <span class="stat-value">100%</span>
-            <span class="stat-label">Seguro</span>
+            <span class="stat-label">Garantido</span>
           </div>
         </div>
       </div>
 
       <div class="hero-scroll" aria-hidden="true">
-        <span>Role para explorar</span>
+        <span>Role para ver as frutas</span>
         <div class="scroll-line"></div>
       </div>
     </section>
@@ -102,9 +100,9 @@
     <section class="catalog" id="frutas">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Catálogo</span>
+          <span class="section-tag">Catálogo de Descontos</span>
           <h2 class="section-title">Todas as Frutas</h2>
-          <p class="section-subtitle">Filtre, busque e encontre a Devil Fruit perfeita para o seu estilo de jogo.</p>
+          <p class="section-subtitle">O valor riscado é o preço do Blox Fruits. O valor em destaque é o preço oficial da Bolas Store!</p>
         </div>
 
         <div class="filters" id="filtersBar">
@@ -134,6 +132,7 @@
               <option value="default">Padrão</option>
               <option value="price-asc">Menor preço</option>
               <option value="price-desc">Maior preço</option>
+              <option value="discount-desc">Maior desconto</option>
               <option value="name-asc">Nome A–Z</option>
               <option value="name-desc">Nome Z–A</option>
             </select>
@@ -146,7 +145,7 @@
         <div class="empty-state" id="emptyState" hidden>
           <div class="empty-icon" aria-hidden="true">🔍</div>
           <h3>Nenhuma fruta encontrada</h3>
-          <p>Tente ajustar os filtros ou o termo de busca.</p>
+          <p>Tente ajustar os filtros ou a sua pesquisa.</p>
           <button type="button" class="btn btn-outline btn-sm" id="clearFilters">Limpar filtros</button>
         </div>
       </div>
@@ -155,9 +154,9 @@
     <section class="how-to-buy" id="como-comprar">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Processo</span>
+          <span class="section-tag">Passo a Passo</span>
           <h2 class="section-title">Como Comprar</h2>
-          <p class="section-subtitle">Simples, rápido e seguro em apenas 3 passos.</p>
+          <p class="section-subtitle">Garanta a sua fruta favorita com praticidade e total segurança.</p>
         </div>
 
         <div class="steps">
@@ -168,8 +167,8 @@
                 <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
               </svg>
             </div>
-            <h3 class="step-title">Escolha a fruta</h3>
-            <p class="step-desc">Navegue pelo catálogo, use a busca e os filtros para encontrar a Devil Fruit ideal.</p>
+            <h3 class="step-title">Escolha a Fruta</h3>
+            <p class="step-desc">Navegue pelas ofertas da Bolas Store e selecione a fruta ideal para sua conta.</p>
           </article>
 
           <article class="step" data-reveal>
@@ -179,8 +178,8 @@
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
             </div>
-            <h3 class="step-title">Clique em Adquirir</h3>
-            <p class="step-desc">O botão abre o WhatsApp com a mensagem pronta contendo nome e valor da fruta.</p>
+            <h3 class="step-title">Inicie o Pedido</h3>
+            <p class="step-desc">Ao clicar no botão de compra, você abre o atendimento direto no WhatsApp.</p>
           </article>
 
           <article class="step" data-reveal>
@@ -190,8 +189,8 @@
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
             </div>
-            <h3 class="step-title">Finalize a compra</h3>
-            <p class="step-desc">Confirme os detalhes com o suporte, realize o pagamento e receba a fruta rapidamente.</p>
+            <h3 class="step-title">Receba a Fruta</h3>
+            <p class="step-desc">Efetue o pagamento e receba a entrega rápida dentro do jogo através do suporte.</p>
           </article>
         </div>
       </div>
@@ -201,8 +200,8 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Vantagens</span>
-          <h2 class="section-title">Por que comprar conosco?</h2>
-          <p class="section-subtitle">Segurança, velocidade e atendimento de qualidade.</p>
+          <h2 class="section-title">Por que a Bolas Store?</h2>
+          <p class="section-subtitle">Qualidade, rapidez e o melhor custo-benefício para jogadores.</p>
         </div>
 
         <div class="trust-grid">
@@ -213,17 +212,7 @@
               </svg>
             </div>
             <h3>WhatsApp Direto</h3>
-            <p>Atendimento rápido e personalizado. Sem burocracia, sem fila.</p>
-          </article>
-
-          <article class="trust-card" data-reveal>
-            <div class="trust-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <h3>Compra Rápida</h3>
-            <p>Processo ágil. Em poucos minutos a fruta está no seu inventário.</p>
+            <p>Atendimento sem burocracia com entrega personalizada e sem esperas longas.</p>
           </article>
 
           <article class="trust-card" data-reveal>
@@ -232,8 +221,18 @@
                 <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
               </svg>
             </div>
-            <h3>Preços Competitivos</h3>
-            <p>Valores abaixo do mercado de referência. Economia real em cada compra.</p>
+            <h3>Preços Imbatíveis</h3>
+            <p>Valores promocionais com grande margem de desconto comparado ao Blox Fruit.</p>
+          </article>
+
+          <article class="trust-card" data-reveal>
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3>Entrega Rápida</h3>
+            <p>Processo ágil logo após a confirmação para você não perder tempo.</p>
           </article>
 
           <article class="trust-card" data-reveal>
@@ -243,16 +242,16 @@
               </svg>
             </div>
             <h3>Catálogo Atualizado</h3>
-            <p>Lista completa das frutas mais pedidas, sempre revisada.</p>
+            <p>Frutas e atualizações sempre revisadas para garantir disponibilidade.</p>
           </article>
         </div>
 
         <div class="support-cta" data-reveal>
           <div class="support-cta-text">
-            <h3>Ainda com dúvidas?</h3>
-            <p>Fale conosco agora pelo WhatsApp. Estamos prontos para ajudar.</p>
+            <h3>Dúvidas ou Pedidos Personalizados?</h3>
+            <p>Fale diretamente com nossa equipe no WhatsApp!</p>
           </div>
-          <a href="https://wa.me/5543984036702?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20frutas." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Abrir conversa no WhatsApp">
+          <a href="https://wa.me/5543984036702?text=Ol%C3%A1%2C%20estou%20na%20Bolas%20Store%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
@@ -273,21 +272,17 @@
               <path d="M16 8v8l5 3" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round"/>
               <defs>
                 <linearGradient id="lg2" x1="0" y1="0" x2="32" y2="32">
-                  <stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b82f6"/>
+                  <stop stop-color="#ff003c"/><stop offset="1" stop-color="#990000"/>
                 </linearGradient>
               </defs>
             </svg>
           </span>
-          <span class="logo-text">Nexus<span class="logo-accent">Fruits</span></span>
+          <span class="logo-text">Bolas<span class="logo-accent">Store</span></span>
         </a>
         <p class="footer-desc">
-          Loja especializada em Devil Fruits do Blox Fruits.
-          Preços justos, entrega rápida e suporte dedicado.
+          Sua loja de referência em Devil Fruits do Blox Fruits com os menores preços do mercado.
         </p>
-        <a href="https://wa.me/5543984036702" class="footer-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da loja">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
+        <a href="https://wa.me/5543984036702" class="footer-whatsapp" target="_blank" rel="noopener noreferrer">
           (43) 98403-6702
         </a>
       </div>
@@ -312,16 +307,14 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 Nexus Fruits. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Bolas Store. Todos os direitos reservados.</p>
         <p class="disclaimer">
-          Esta loja <strong>não é afiliada</strong> à Roblox Corporation nem aos desenvolvedores oficiais de Blox Fruits.
-          Nomes de frutas são usados apenas para identificação comercial.
+          Esta loja <strong>não é afiliada</strong> à Roblox Corporation nem aos desenvolvedores do Blox Fruits.
         </p>
       </div>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   <script src="script.js"></script>
 </body>
 </html>
