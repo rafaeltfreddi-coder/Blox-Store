@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Bolas Store — Estilos Completos e Responsivos (Anti-Bug Mobile)
-   ========================================================================== */
-
 :root {
   --bg-dark: #0a0505;
   --bg-card: #120a0b;
@@ -182,7 +178,7 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   color: #fff;
 }
 
-/* Background Cyber Grid */
+/* Background Grid */
 .tech-grid-bg {
   position: fixed;
   inset: 0;
@@ -582,7 +578,7 @@ h1, h2, h3, h4, .logo-text, .section-title, .hero-title {
   color: var(--text-muted);
 }
 
-/* Responsividade desktop */
+/* Responsividade Desktop */
 @media (min-width: 640px) {
   .filters { flex-direction: row; }
   .search-box { flex: 1; }
