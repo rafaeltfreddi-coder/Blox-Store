@@ -50,8 +50,24 @@ const fruits = [
   { id: 41, name: "Dragon Permanente", rarity: "Mítica", price: 220.00, oldPrice: 311.00, emoji: "🐉" }
 ];
 
-// Telefone oficial do WhatsApp
 const PHONE_NUMBER = "5543984036702"; 
+
+// Cria partículas tecnológicas dinâmicas no fundo
+function createTechParticles() {
+  const container = document.getElementById("tech-particles");
+  if (!container) return;
+  
+  const particleCount = 18;
+  for (let i = 0; i < particleCount; i++) {
+    const p = document.createElement("div");
+    p.className = "tech-particle";
+    p.style.left = `${Math.random() * 100}vw`;
+    p.style.top = `${Math.random() * 100}vh`;
+    p.style.animationDuration = `${5 + Math.random() * 6}s`;
+    p.style.animationDelay = `${Math.random() * 5}s`;
+    container.appendChild(p);
+  }
+}
 
 // Renderiza os Cards no Grid
 function renderFruits(data) {
@@ -63,7 +79,7 @@ function renderFruits(data) {
 
   if (!data || data.length === 0) {
     fruitsGrid.innerHTML = `
-      <div class="empty-state">
+      <div class="empty-state" role="status">
         <p>Nenhuma fruta encontrada com estes filtros.</p>
       </div>
     `;
@@ -82,12 +98,13 @@ function renderFruits(data) {
 
     const card = document.createElement("div");
     card.className = `fruit-card ${rarityClass}`;
+    card.setAttribute("role", "listitem");
 
     card.innerHTML = `
       <div>
         <div class="fruit-image-wrap">
           <span class="fruit-badge">${fruit.rarity}</span>
-          <span class="fruit-emoji">${fruit.emoji}</span>
+          <span class="fruit-emoji" aria-hidden="true">${fruit.emoji}</span>
         </div>
         <h3 class="fruit-name">${fruit.name}</h3>
       </div>
@@ -96,13 +113,13 @@ function renderFruits(data) {
         <div class="fruit-prices">
           ${hasDiscount ? `
             <div class="price-row-ref">
-              <span class="fruit-price-ref">R$ ${fruit.oldPrice.toFixed(2)}</span>
-              <span class="fruit-discount">-${discount}%</span>
+              <span class="fruit-price-ref" aria-label="Preço original: R$ ${fruit.oldPrice.toFixed(2)}">R$ ${fruit.oldPrice.toFixed(2)}</span>
+              <span class="fruit-discount" aria-label="${discount}% de desconto">-${discount}%</span>
             </div>
           ` : ''}
-          <div class="fruit-price">R$ ${fruit.price.toFixed(2)}</div>
+          <div class="fruit-price" aria-label="Preço com desconto: R$ ${fruit.price.toFixed(2)}">R$ ${fruit.price.toFixed(2)}</div>
         </div>
-        <button class="btn-buy" onclick="buyFruit('${fruit.name}', ${fruit.price})">
+        <button class="btn-buy" onclick="buyFruit('${fruit.name}', ${fruit.price})" aria-label="Comprar ${fruit.name}">
           Comprar
         </button>
       </div>
@@ -149,6 +166,7 @@ function buyFruit(name, price) {
 
 // Inicializador Principal
 function init() {
+  createTechParticles();
   renderFruits(fruits);
 
   const searchInput = document.getElementById("search-input");
@@ -164,6 +182,16 @@ function init() {
   if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
       navMenu.classList.toggle("open");
+      const isOpen = navMenu.classList.contains("open");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Fechar menu ao clicar em links em dispositivos móveis
+    navMenu.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
