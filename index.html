@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="theme-color" content="#080706">
-  <meta name="description" content="Bolas Store — Frutas permanentes para Blox Fruits.">
+  <meta
+    name="description"
+    content="Bolas Store — Frutas Permanentes de Blox Fruits com entrega rápida."
+  >
 
   <title>Bolas Store — Frutas Blox Fruits</title>
 
@@ -13,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -22,34 +24,63 @@
 
 <body>
 
-  <!-- Fundo -->
-  <div class="background-effects" aria-hidden="true">
-    <div class="gold-orb orb-1"></div>
-    <div class="gold-orb orb-2"></div>
-    <div class="gold-grid"></div>
-    <div class="floating-fruits" id="floating-fruits"></div>
+  <!-- =====================================================
+       FUNDO
+  ====================================================== -->
+
+  <div class="background">
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+    <div class="background-grid"></div>
+
+    <div
+      class="floating-fruits"
+      id="floating-fruits"
+      aria-hidden="true"
+    ></div>
   </div>
 
-  <!-- Header -->
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header class="header">
+
     <div class="container header-inner">
 
       <a href="#" class="logo" aria-label="Bolas Store">
+
         <span class="logo-icon">🍎</span>
-        <span class="logo-text">
+
+        <span class="logo-name">
           BOLAS<span>STORE</span>
         </span>
+
       </a>
 
+
       <nav class="nav" id="nav-menu">
-        <a href="#catalog" class="nav-link">Catálogo</a>
-        <a href="#how-to-buy" class="nav-link">Como Comprar</a>
-        <a href="#trust" class="nav-link">Segurança</a>
+
+        <a href="#catalog" class="nav-link">
+          Catálogo
+        </a>
+
+        <a href="#how-to-buy" class="nav-link">
+          Como Comprar
+        </a>
+
+        <a href="#trust" class="nav-link">
+          Segurança
+        </a>
+
       </nav>
 
+
       <div class="header-actions">
+
         <a
-          href="https://wa.me/5543984036702?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20frutas%20permanentes."
+          href="https://wa.me/5543984036702?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20frutas%20permanentes."
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-whatsapp btn-sm"
@@ -60,297 +91,579 @@
         <button
           class="menu-toggle"
           id="menu-toggle"
+          aria-label="Abrir menu"
           aria-expanded="false"
           aria-controls="nav-menu"
-          aria-label="Abrir menu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
+
       </div>
 
     </div>
+
   </header>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
   <main>
 
-    <!-- HERO -->
     <section class="hero">
+
       <div class="container hero-content">
 
         <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          <span>Entrega rápida via Trade</span>
+
+          <span class="badge-dot"></span>
+
+          <span>
+            Entrega rápida via Trade
+          </span>
+
         </div>
 
+
         <h1 class="hero-title">
+
           Domine os mares com as
-          <span class="gradient-text">melhores frutas</span>
+
+          <span class="gold-text">
+            melhores frutas
+          </span>
+
         </h1>
 
+
         <p class="hero-subtitle">
-          Frutas permanentes com preços especiais, atendimento rápido
-          e entrega diretamente no seu inventário.
+
+          Compre suas frutas permanentes com segurança,
+          atendimento rápido e preços competitivos.
+
         </p>
 
-        <div class="hero-cta">
-          <a href="#catalog" class="btn btn-primary btn-lg">
+
+        <div class="hero-buttons">
+
+          <a
+            href="#catalog"
+            class="btn btn-primary btn-lg"
+          >
             Ver Catálogo
             <span>→</span>
           </a>
 
-          <a href="#how-to-buy" class="btn btn-outline btn-lg">
+          <a
+            href="#how-to-buy"
+            class="btn btn-glass btn-lg"
+          >
             Como Funciona
           </a>
+
         </div>
 
-        <div class="hero-stats">
 
-          <div class="stat-item">
-            <span class="stat-value">34+</span>
-            <span class="stat-label">Vendas</span>
+        <!-- STATS -->
+
+        <div class="stats">
+
+          <div class="stat">
+
+            <strong>34+</strong>
+
+            <span>Vendas</span>
+
           </div>
+
 
           <div class="stat-divider"></div>
 
-          <div class="stat-item">
-            <span class="stat-value">100%</span>
-            <span class="stat-label">Seguro</span>
+
+          <div class="stat">
+
+            <strong>100%</strong>
+
+            <span>Seguro</span>
+
           </div>
+
 
           <div class="stat-divider"></div>
 
-          <div class="stat-item">
-            <span class="stat-value">4.8★</span>
-            <span class="stat-label">Avaliações</span>
+
+          <div class="stat">
+
+            <strong>4.8★</strong>
+
+            <span>Avaliações</span>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- CATÁLOGO -->
-    <section class="catalog" id="catalog">
+
+    <!-- =====================================================
+         CATÁLOGO
+    ====================================================== -->
+
+    <section
+      class="catalog section"
+      id="catalog"
+    >
+
       <div class="container">
 
         <div class="section-header">
-          <span class="section-tag">ESTOQUE ATUALIZADO</span>
 
-          <h2 class="section-title">
+          <span class="section-label">
+            ESTOQUE ATUALIZADO
+          </span>
+
+          <h2>
             Frutas Permanentes
           </h2>
 
-          <p class="section-subtitle">
-            Encontre sua fruta rapidamente usando os filtros abaixo.
+          <p>
+            Encontre rapidamente a fruta que procura.
           </p>
+
         </div>
+
+
+        <!-- FILTROS -->
 
         <div class="filters">
 
           <div class="search-box">
-            <span class="search-icon">⌕</span>
+
+            <span class="search-icon">
+              🔍
+            </span>
 
             <input
               type="text"
               id="search-input"
-              class="search-input"
               placeholder="Buscar fruta..."
               autocomplete="off"
               aria-label="Buscar fruta"
             >
 
-            <span class="search-hint">Ctrl K</span>
+            <kbd>
+              Ctrl K
+            </kbd>
+
           </div>
 
-          <div class="filter-group">
 
-            <select id="rarity-filter" class="filter-select">
-              <option value="all">Todas as Raridades</option>
-              <option value="Comum">Comum</option>
-              <option value="Incomum">Incomum</option>
-              <option value="Rara">Rara</option>
-              <option value="Lendária">Lendária</option>
-              <option value="Mítica">Mítica</option>
+          <div class="select-wrapper">
+
+            <select
+              id="rarity-filter"
+              aria-label="Filtrar por raridade"
+            >
+
+              <option value="all">
+                Todas as Raridades
+              </option>
+
+              <option value="Comum">
+                Comum
+              </option>
+
+              <option value="Incomum">
+                Incomum
+              </option>
+
+              <option value="Rara">
+                Rara
+              </option>
+
+              <option value="Lendária">
+                Lendária
+              </option>
+
+              <option value="Mítica">
+                Mítica
+              </option>
+
             </select>
 
-            <select id="sort-filter" class="filter-select">
-              <option value="default">Ordenar por</option>
-              <option value="price-asc">Menor Preço</option>
-              <option value="price-desc">Maior Preço</option>
-              <option value="name">Nome A-Z</option>
+          </div>
+
+
+          <div class="select-wrapper">
+
+            <select
+              id="sort-filter"
+              aria-label="Ordenar frutas"
+            >
+
+              <option value="default">
+                Ordenar por
+              </option>
+
+              <option value="price-asc">
+                Menor preço
+              </option>
+
+              <option value="price-desc">
+                Maior preço
+              </option>
+
+              <option value="name">
+                Nome A-Z
+              </option>
+
             </select>
 
           </div>
 
         </div>
 
-        <div class="results-count" id="results-count">
+
+        <div
+          class="results-count"
+          id="results-count"
+          aria-live="polite"
+        >
           Mostrando todas as frutas
         </div>
+
+
+        <!-- GRID -->
 
         <div
           class="fruits-grid"
           id="fruits-grid"
-          role="list"
         ></div>
 
       </div>
+
     </section>
 
-    <!-- COMO COMPRAR -->
-    <section class="how-to-buy" id="how-to-buy">
+
+    <!-- =====================================================
+         COMO COMPRAR
+    ====================================================== -->
+
+    <section
+      class="section info-section"
+      id="how-to-buy"
+    >
+
       <div class="container">
 
         <div class="section-header">
-          <span class="section-tag">PASSO A PASSO</span>
 
-          <h2 class="section-title">
+          <span class="section-label">
+            PASSO A PASSO
+          </span>
+
+          <h2>
             Como funciona?
           </h2>
+
+          <p>
+            Comprar sua fruta é simples e rápido.
+          </p>
+
         </div>
+
 
         <div class="steps">
 
-          <article class="step">
-            <span class="step-number">01</span>
-            <div class="step-icon">🍎</div>
-            <h3>Escolha a Fruta</h3>
+          <article class="glass-card step-card">
+
+            <span class="step-number">
+              01
+            </span>
+
+            <div class="step-icon">
+              🛒
+            </div>
+
+            <h3>
+              Escolha sua fruta
+            </h3>
+
             <p>
-              Navegue pelo catálogo e escolha a fruta permanente
-              que deseja comprar.
+              Encontre a fruta desejada no catálogo
+              e clique em comprar.
             </p>
+
           </article>
 
-          <article class="step">
-            <span class="step-number">02</span>
-            <div class="step-icon">💬</div>
-            <h3>Fale no WhatsApp</h3>
+
+          <article class="glass-card step-card">
+
+            <span class="step-number">
+              02
+            </span>
+
+            <div class="step-icon">
+              💬
+            </div>
+
+            <h3>
+              Fale conosco
+            </h3>
+
             <p>
-              Clique em comprar e você será direcionado para
-              nosso WhatsApp com o pedido pronto.
+              O pedido será preparado automaticamente
+              para o atendimento via WhatsApp.
             </p>
+
           </article>
 
-          <article class="step">
-            <span class="step-number">03</span>
-            <div class="step-icon">💳</div>
-            <h3>Faça o Pagamento</h3>
+
+          <article class="glass-card step-card">
+
+            <span class="step-number">
+              03
+            </span>
+
+            <div class="step-icon">
+              💳
+            </div>
+
+            <h3>
+              Faça o pagamento
+            </h3>
+
             <p>
-              Realize o pagamento via Pix de forma rápida
-              e prática.
+              Combine o pagamento com nosso atendimento
+              e confirme seu pedido.
             </p>
+
           </article>
 
-          <article class="step">
-            <span class="step-number">04</span>
-            <div class="step-icon">⚡</div>
-            <h3>Receba no Jogo</h3>
+
+          <article class="glass-card step-card">
+
+            <span class="step-number">
+              04
+            </span>
+
+            <div class="step-icon">
+              ⚡
+            </div>
+
+            <h3>
+              Receba no jogo
+            </h3>
+
             <p>
-              Entramos no servidor com você e realizamos
-              a entrega via Trade.
+              Entramos no servidor e realizamos
+              a entrega através de Trade.
             </p>
+
           </article>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- SEGURANÇA -->
-    <section class="trust" id="trust">
+
+    <!-- =====================================================
+         SEGURANÇA
+    ====================================================== -->
+
+    <section
+      class="section trust-section"
+      id="trust"
+    >
+
       <div class="container">
 
         <div class="section-header">
-          <span class="section-tag">POR QUE ESCOLHER</span>
 
-          <h2 class="section-title">
-            Confiança em primeiro lugar
+          <span class="section-label">
+            GARANTIA
+          </span>
+
+          <h2>
+            Por que confiar na Bolas Store?
           </h2>
+
         </div>
+
 
         <div class="trust-grid">
 
-          <article class="trust-card">
-            <div class="trust-icon">⚡</div>
-            <h3>Entrega Rápida</h3>
+          <article class="glass-card trust-card">
+
+            <div class="trust-icon">
+              ⚡
+            </div>
+
+            <h3>
+              Entrega rápida
+            </h3>
+
             <p>
-              Seu pedido é entregue rapidamente após
-              a confirmação do pagamento.
+              Atendimento ágil para que você receba
+              sua fruta o mais rápido possível.
             </p>
+
           </article>
 
-          <article class="trust-card">
-            <div class="trust-icon">🔐</div>
-            <h3>Compra Segura</h3>
+
+          <article class="glass-card trust-card">
+
+            <div class="trust-icon">
+              🔒
+            </div>
+
+            <h3>
+              Compra segura
+            </h3>
+
             <p>
-              Processo transparente com atendimento
-              dedicado pelo WhatsApp.
+              Processo transparente com suporte
+              durante toda a compra.
             </p>
+
           </article>
 
-          <article class="trust-card">
-            <div class="trust-icon">✦</div>
-            <h3>Preço Especial</h3>
+
+          <article class="glass-card trust-card">
+
+            <div class="trust-icon">
+              ✨
+            </div>
+
+            <h3>
+              Preços competitivos
+            </h3>
+
             <p>
-              Ofertas competitivas para você economizar
-              na sua fruta permanente.
+              Ofertas e preços especiais em diversas
+              frutas permanentes.
             </p>
+
           </article>
 
         </div>
 
       </div>
+
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer class="footer">
 
     <div class="container">
 
-      <div class="footer-inner">
+      <div class="footer-grid">
 
         <div>
+
           <a href="#" class="logo">
-            <span class="logo-icon">🍎</span>
-            <span class="logo-text">
+
+            <span class="logo-icon">
+              🍎
+            </span>
+
+            <span class="logo-name">
               BOLAS<span>STORE</span>
             </span>
+
           </a>
 
-          <p class="footer-desc">
-            Frutas permanentes para Blox Fruits,
-            com atendimento rápido e seguro.
+          <p class="footer-description">
+
+            Sua loja de frutas permanentes
+            para Blox Fruits.
+
           </p>
+
         </div>
 
-        <div class="footer-links">
-          <h4>Navegação</h4>
 
-          <a href="#catalog">Catálogo</a>
-          <a href="#how-to-buy">Como Comprar</a>
-          <a href="#trust">Segurança</a>
+        <div>
+
+          <h3>
+            Navegação
+          </h3>
+
+          <a href="#catalog">
+            Catálogo
+          </a>
+
+          <a href="#how-to-buy">
+            Como Comprar
+          </a>
+
+          <a href="#trust">
+            Segurança
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Atendimento
+          </h3>
+
+          <a
+            href="https://wa.me/5543984036702"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+
         </div>
 
       </div>
 
+
       <div class="footer-bottom">
+
         <p>
           © 2026 Bolas Store. Todos os direitos reservados.
         </p>
 
-        <p class="disclaimer">
+        <p>
           Não possuímos vínculo com a Roblox Corporation.
         </p>
+
       </div>
 
     </div>
 
   </footer>
 
+
+  <!-- TOAST -->
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
