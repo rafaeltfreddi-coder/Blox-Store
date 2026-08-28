@@ -4,11 +4,6 @@
 
 const PHONE_NUMBER = "5543984036702";
 
-
-/* =========================================================
-   URL BASE DAS IMAGENS DA BEEBOM
-========================================================= */
-
 const IMAGE_BASE =
   "https://static.beebom.com/wp-content/uploads/2026/01/";
 
@@ -97,9 +92,7 @@ const fruits = [
     rarity: "Incomum",
     price: 22.00,
     oldPrice: 34.00,
-    image:
-      IMAGE_BASE +
-      "Flame_Fruit.png.webp?quality=75&w=1024"
+    image: IMAGE_BASE + "Flame_Fruit.png.webp?quality=75&w=1024"
   },
 
   {
@@ -135,9 +128,7 @@ const fruits = [
     rarity: "Incomum",
     price: 61.00,
     oldPrice: 61.00,
-    image:
-      IMAGE_BASE +
-      "Eagle_Fruit.png.webp?quality=75&w=1024"
+    image: IMAGE_BASE + "Eagle_Fruit.png.webp?quality=75&w=1024"
   },
 
 
@@ -228,9 +219,7 @@ const fruits = [
     rarity: "Lendária",
     price: 80.00,
     oldPrice: 109.00,
-    image:
-      IMAGE_BASE +
-      "Creation_Fruit.webp?quality=75&w=420"
+    image: IMAGE_BASE + "Creation_Fruit.webp?quality=75&w=420"
   },
 
   {
@@ -307,9 +296,7 @@ const fruits = [
     rarity: "Mítica",
     price: 110.00,
     oldPrice: 143.00,
-    image:
-      IMAGE_BASE +
-      "Gravity_Fruit.png.webp?quality=75&w=1024"
+    image: IMAGE_BASE + "Gravity_Fruit.png.webp?quality=75&w=1024"
   },
 
   {
@@ -363,9 +350,7 @@ const fruits = [
     rarity: "Mítica",
     price: 125.00,
     oldPrice: 156.00,
-    image:
-      IMAGE_BASE +
-      "Gas_Fruit.png.webp?quality=75&w=1024"
+    image: IMAGE_BASE + "Gas_Fruit.png.webp?quality=75&w=1024"
   },
 
   {
@@ -383,9 +368,7 @@ const fruits = [
     rarity: "Mítica",
     price: 150.00,
     oldPrice: 187.00,
-    image:
-      IMAGE_BASE +
-      "Tiger_Fruit.png.webp?quality=75&w=1024"
+    image: IMAGE_BASE + "Tiger_Fruit.png.webp?quality=75&w=1024"
   },
 
   {
@@ -403,9 +386,7 @@ const fruits = [
     rarity: "Mítica",
     price: 192.00,
     oldPrice: 249.00,
-    image:
-      IMAGE_BASE +
-      "Control_Fruit.png.webp?w=854"
+    image: IMAGE_BASE + "Control_Fruit.png.webp?w=854"
   },
 
   {
@@ -414,9 +395,7 @@ const fruits = [
     rarity: "Mítica",
     price: 192.00,
     oldPrice: 249.00,
-    image:
-      IMAGE_BASE +
-      "Kitsune_Fruit.png.webp?quality=75&w=1024"
+    image: IMAGE_BASE + "Kitsune_Fruit.png.webp?quality=75&w=1024"
   },
 
   {
@@ -425,9 +404,7 @@ const fruits = [
     rarity: "Mítica",
     price: 220.00,
     oldPrice: 311.00,
-    image:
-      IMAGE_BASE +
-      "Dragon_Fruit.png.webp?w=150"
+    image: IMAGE_BASE + "Dragon_Fruit.png.webp?w=150"
   }
 
 ];
@@ -438,7 +415,6 @@ const fruits = [
 ========================================================= */
 
 function rarityClass(rarity) {
-
   return (
     "rarity-" +
     rarity
@@ -446,12 +422,10 @@ function rarityClass(rarity) {
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
   );
-
 }
 
 
 function formatPrice(price) {
-
   return price.toLocaleString(
     "pt-BR",
     {
@@ -459,12 +433,10 @@ function formatPrice(price) {
       currency: "BRL"
     }
   );
-
 }
 
 
 function calculateDiscount(oldPrice, price) {
-
   if (!oldPrice || oldPrice <= price) {
     return 0;
   }
@@ -472,7 +444,6 @@ function calculateDiscount(oldPrice, price) {
   return Math.round(
     ((oldPrice - price) / oldPrice) * 100
   );
-
 }
 
 
@@ -490,7 +461,6 @@ function renderFruits(data) {
 
   if (!grid) return;
 
-
   grid.innerHTML = "";
 
 
@@ -498,9 +468,7 @@ function renderFruits(data) {
 
     grid.innerHTML = `
       <div class="empty-state">
-        <p>
-          Nenhuma fruta encontrada.
-        </p>
+        <p>Nenhuma fruta encontrada.</p>
       </div>
     `;
 
@@ -514,10 +482,8 @@ function renderFruits(data) {
 
 
   if (results) {
-
     results.textContent =
       `Mostrando ${data.length} fruta${data.length !== 1 ? "s" : ""}`;
-
   }
 
 
@@ -540,7 +506,6 @@ function renderFruits(data) {
     card.className =
       `fruit-card ${rarityClass(fruit.rarity)}`;
 
-
     card.style.animationDelay =
       `${Math.min(index * 0.025, .35)}s`;
 
@@ -552,22 +517,24 @@ function renderFruits(data) {
         <div class="fruit-image-wrap">
 
           <span class="fruit-badge">
-            ${fruit.rarity}
+            ${escapeHtml(fruit.rarity)}
           </span>
 
           <img
             class="fruit-image"
-            src="${fruit.image}"
-            alt="${fruit.name}"
+            src="${escapeAttribute(fruit.image)}"
+            alt="${escapeAttribute(fruit.name)}"
             loading="lazy"
             decoding="async"
+            width="150"
+            height="150"
           >
 
         </div>
 
 
         <h3 class="fruit-name">
-          ${fruit.name}
+          ${escapeHtml(fruit.name)}
         </h3>
 
       </div>
@@ -607,6 +574,7 @@ function renderFruits(data) {
           class="btn-buy"
           type="button"
           data-fruit-id="${fruit.id}"
+          aria-label="Comprar ${escapeAttribute(fruit.name)} por ${formatPrice(fruit.price)}"
         >
           Comprar
         </button>
@@ -623,6 +591,25 @@ function renderFruits(data) {
 
   grid.appendChild(fragment);
 
+}
+
+
+/* =========================================================
+   SEGURANÇA PARA TEXTO INSERIDO NO HTML
+========================================================= */
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+
+function escapeAttribute(value) {
+  return escapeHtml(value);
 }
 
 
@@ -712,7 +699,6 @@ function filterAndRender() {
 
 
   renderFruits(filtered);
-
 }
 
 
@@ -745,7 +731,6 @@ function buyFruit(id) {
     "_blank",
     "noopener,noreferrer"
   );
-
 }
 
 
@@ -781,12 +766,198 @@ function setupBuyButtons() {
 
     }
   );
-
 }
 
 
 /* =========================================================
-   FRUTAS FLUTUANTES NO FUNDO
+   PARTÍCULAS
+========================================================= */
+
+function createParticles() {
+
+  const container =
+    document.getElementById("particles");
+
+
+  if (!container) return;
+
+
+  const reducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+  if (reducedMotion) {
+    return;
+  }
+
+
+  container.innerHTML = "";
+
+
+  const isMobile =
+    window.innerWidth < 700;
+
+
+  const amount =
+    isMobile
+      ? 22
+      : 42;
+
+
+  const fragment =
+    document.createDocumentFragment();
+
+
+  for (let i = 0; i < amount; i++) {
+
+    const particle =
+      document.createElement("span");
+
+
+    particle.className =
+      "particle";
+
+
+    const size =
+      1.5 +
+      Math.random() * 3.5;
+
+
+    const x =
+      Math.random() * 100;
+
+
+    const y =
+      Math.random() * 100;
+
+
+    const opacity =
+      .15 +
+      Math.random() * .42;
+
+
+    const duration =
+      8 +
+      Math.random() * 16;
+
+
+    const delay =
+      Math.random() * -20;
+
+
+    const moves = [
+      -70 + Math.random() * 140,
+      -70 + Math.random() * 140,
+      -70 + Math.random() * 140,
+      -70 + Math.random() * 140
+    ];
+
+
+    const verticalMoves = [
+      -70 + Math.random() * 140,
+      -70 + Math.random() * 140,
+      -70 + Math.random() * 140,
+      -70 + Math.random() * 140
+    ];
+
+
+    particle.style.setProperty(
+      "--particle-size",
+      `${size}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-x",
+      `${x}%`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-y",
+      `${y}%`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-opacity",
+      opacity
+    );
+
+
+    particle.style.setProperty(
+      "--particle-duration",
+      `${duration}s`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-delay",
+      `${delay}s`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-x-1",
+      `${moves[0]}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-x-2",
+      `${moves[1]}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-x-3",
+      `${moves[2]}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-x-4",
+      `${moves[3]}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-y-1",
+      `${verticalMoves[0]}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-y-2",
+      `${verticalMoves[1]}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-y-3",
+      `${verticalMoves[2]}px`
+    );
+
+
+    particle.style.setProperty(
+      "--particle-move-y-4",
+      `${verticalMoves[3]}px`
+    );
+
+
+    fragment.appendChild(particle);
+
+  }
+
+
+  container.appendChild(fragment);
+}
+
+
+/* =========================================================
+   FRUTAS FLUTUANTES
 ========================================================= */
 
 function createFloatingFruits() {
@@ -800,10 +971,19 @@ function createFloatingFruits() {
   if (!container) return;
 
 
-  /*
-    Escolhemos algumas frutas para o
-    fundo para não deixar a tela pesada.
-  */
+  const reducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+  if (reducedMotion) {
+    return;
+  }
+
+
+  container.innerHTML = "";
+
 
   const backgroundFruits = [
 
@@ -848,6 +1028,10 @@ function createFloatingFruits() {
       : 9;
 
 
+  const fragment =
+    document.createDocumentFragment();
+
+
   for (
     let i = 0;
     i < amount;
@@ -875,6 +1059,15 @@ function createFloatingFruits() {
     img.alt = "";
 
 
+    img.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    img.loading = "lazy";
+
+
     const size =
       65 +
       Math.random() * 85;
@@ -897,8 +1090,8 @@ function createFloatingFruits() {
 
 
     const opacity =
-      0.035 +
-      Math.random() * 0.06;
+      .035 +
+      Math.random() * .065;
 
 
     const blur =
@@ -980,10 +1173,12 @@ function createFloatingFruits() {
     );
 
 
-    container.appendChild(img);
+    fragment.appendChild(img);
 
   }
 
+
+  container.appendChild(fragment);
 }
 
 
@@ -998,6 +1193,7 @@ function setupMenu() {
       "menu-toggle"
     );
 
+
   const nav =
     document.getElementById(
       "nav-menu"
@@ -1007,22 +1203,62 @@ function setupMenu() {
   if (!toggle || !nav) return;
 
 
+  function closeMenu() {
+
+    nav.classList.remove("open");
+
+    toggle.classList.remove("active");
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    toggle.setAttribute(
+      "aria-label",
+      "Abrir menu"
+    );
+
+  }
+
+
+  function toggleMenu() {
+
+    const open =
+      !nav.classList.contains("open");
+
+
+    nav.classList.toggle(
+      "open",
+      open
+    );
+
+
+    toggle.classList.toggle(
+      "active",
+      open
+    );
+
+
+    toggle.setAttribute(
+      "aria-expanded",
+      String(open)
+    );
+
+
+    toggle.setAttribute(
+      "aria-label",
+      open
+        ? "Fechar menu"
+        : "Abrir menu"
+    );
+
+  }
+
+
   toggle.addEventListener(
     "click",
-    () => {
-
-      const open =
-        nav.classList.toggle(
-          "open"
-        );
-
-
-      toggle.setAttribute(
-        "aria-expanded",
-        String(open)
-      );
-
-    }
+    toggleMenu
   );
 
 
@@ -1032,21 +1268,41 @@ function setupMenu() {
 
       link.addEventListener(
         "click",
-        () => {
-
-          nav.classList.remove(
-            "open"
-          );
-
-          toggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-        }
+        closeMenu
       );
 
     });
+
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "click",
+    event => {
+
+      if (
+        !nav.classList.contains("open") ||
+        nav.contains(event.target) ||
+        toggle.contains(event.target)
+      ) {
+        return;
+      }
+
+
+      closeMenu();
+
+    }
+  );
 
 }
 
@@ -1059,7 +1315,7 @@ function setupSearchShortcut() {
 
   document.addEventListener(
     "keydown",
-    (event) => {
+    event => {
 
       if (
         (event.ctrlKey ||
@@ -1135,7 +1391,7 @@ function showToast(message) {
 
 
 /* =========================================================
-   IMAGEM FALLBACK
+   FALLBACK DE IMAGENS
 ========================================================= */
 
 function setupImageFallback() {
@@ -1151,27 +1407,166 @@ function setupImageFallback() {
 
   grid.addEventListener(
     "error",
-    (event) => {
+    event => {
+
+      const image =
+        event.target;
+
 
       if (
-        event.target.tagName !==
-        "IMG"
+        !(image instanceof HTMLImageElement)
       ) {
         return;
       }
 
 
-      /*
-        Caso a Beebom altere/remova uma
-        imagem, evita quebrar o card.
-      */
+      if (
+        image.dataset.fallbackApplied === "true"
+      ) {
+        return;
+      }
 
-      event.target.style.opacity =
-        "0.15";
+
+      image.dataset.fallbackApplied =
+        "true";
+
+
+      image.style.opacity =
+        ".15";
+
+
+      image.alt =
+        "Imagem da fruta indisponível";
 
     },
     true
   );
+
+}
+
+
+/* =========================================================
+   FECHAR MENU AO REDIMENSIONAR
+========================================================= */
+
+function setupResizeHandler() {
+
+  let previousMobile =
+    window.innerWidth <= 700;
+
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      const currentMobile =
+        window.innerWidth <= 700;
+
+
+      if (
+        currentMobile !== previousMobile
+      ) {
+
+        previousMobile =
+          currentMobile;
+
+
+        createParticles();
+
+        createFloatingFruits();
+
+
+        const nav =
+          document.getElementById(
+            "nav-menu"
+          );
+
+
+        const toggle =
+          document.getElementById(
+            "menu-toggle"
+          );
+
+
+        if (nav && toggle) {
+
+          nav.classList.remove("open");
+
+          toggle.classList.remove("active");
+
+          toggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          toggle.setAttribute(
+            "aria-label",
+            "Abrir menu"
+          );
+
+        }
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   TEMA AUTOMÁTICO
+========================================================= */
+
+function setupTheme() {
+
+  const savedTheme =
+    localStorage.getItem(
+      "bolas-store-theme"
+    );
+
+
+  if (savedTheme === "light") {
+
+    document.documentElement
+      .setAttribute(
+        "data-theme",
+        "light"
+      );
+
+    return;
+
+  }
+
+
+  if (savedTheme === "dark") {
+
+    document.documentElement
+      .setAttribute(
+        "data-theme",
+        "dark"
+      );
+
+    return;
+
+  }
+
+
+  const prefersLight =
+    window.matchMedia(
+      "(prefers-color-scheme: light)"
+    ).matches;
+
+
+  if (prefersLight) {
+
+    document.documentElement
+      .setAttribute(
+        "data-theme",
+        "light"
+      );
+
+  }
 
 }
 
@@ -1182,7 +1577,11 @@ function setupImageFallback() {
 
 function init() {
 
+  setupTheme();
+
   renderFruits(fruits);
+
+  createParticles();
 
   createFloatingFruits();
 
@@ -1194,16 +1593,20 @@ function init() {
 
   setupImageFallback();
 
+  setupResizeHandler();
+
 
   const searchInput =
     document.getElementById(
       "search-input"
     );
 
+
   const rarityFilter =
     document.getElementById(
       "rarity-filter"
     );
+
 
   const sortFilter =
     document.getElementById(
@@ -1230,6 +1633,10 @@ function init() {
 
 }
 
+
+/* =========================================================
+   START
+========================================================= */
 
 if (
   document.readyState ===
