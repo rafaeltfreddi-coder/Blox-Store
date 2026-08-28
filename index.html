@@ -2,12 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
 
   <meta
     name="description"
     content="Bolas Store — Frutas Permanentes de Blox Fruits com entrega rápida."
   >
+
+  <meta name="theme-color" content="#050a0f">
 
   <title>Bolas Store — Frutas Blox Fruits</title>
 
@@ -28,16 +34,24 @@
        FUNDO
   ====================================================== -->
 
-  <div class="background">
+  <div class="background" aria-hidden="true">
+
     <div class="background-glow glow-1"></div>
     <div class="background-glow glow-2"></div>
+    <div class="background-glow glow-3"></div>
+
     <div class="background-grid"></div>
+
+    <div
+      class="particles"
+      id="particles"
+    ></div>
 
     <div
       class="floating-fruits"
       id="floating-fruits"
-      aria-hidden="true"
     ></div>
+
   </div>
 
 
@@ -49,9 +63,16 @@
 
     <div class="container header-inner">
 
-      <a href="#" class="logo" aria-label="Bolas Store">
+      <a
+        href="#"
+        class="logo"
+        aria-label="Bolas Store — voltar ao início"
+      >
 
-        <span class="logo-icon">🍎</span>
+        <span
+          class="logo-icon"
+          aria-hidden="true"
+        >🍎</span>
 
         <span class="logo-name">
           BOLAS<span>STORE</span>
@@ -60,17 +81,30 @@
       </a>
 
 
-      <nav class="nav" id="nav-menu">
+      <nav
+        class="nav"
+        id="nav-menu"
+        aria-label="Navegação principal"
+      >
 
-        <a href="#catalog" class="nav-link">
+        <a
+          href="#catalog"
+          class="nav-link"
+        >
           Catálogo
         </a>
 
-        <a href="#how-to-buy" class="nav-link">
+        <a
+          href="#how-to-buy"
+          class="nav-link"
+        >
           Como Comprar
         </a>
 
-        <a href="#trust" class="nav-link">
+        <a
+          href="#trust"
+          class="nav-link"
+        >
           Segurança
         </a>
 
@@ -84,13 +118,16 @@
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-whatsapp btn-sm"
+          aria-label="Falar com a Bolas Store pelo WhatsApp"
         >
           <span>WhatsApp</span>
         </a>
 
+
         <button
           class="menu-toggle"
           id="menu-toggle"
+          type="button"
           aria-label="Abrir menu"
           aria-expanded="false"
           aria-controls="nav-menu"
@@ -108,18 +145,28 @@
 
 
   <!-- =====================================================
-       HERO
+       CONTEÚDO
   ====================================================== -->
 
   <main>
 
-    <section class="hero">
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
 
       <div class="container hero-content">
 
         <div class="hero-badge">
 
-          <span class="badge-dot"></span>
+          <span
+            class="badge-dot"
+            aria-hidden="true"
+          ></span>
 
           <span>
             Entrega rápida via Trade
@@ -128,22 +175,20 @@
         </div>
 
 
-        <h1 class="hero-title">
-
+        <h1
+          class="hero-title"
+          id="hero-title"
+        >
           Domine os mares com as
-
           <span class="gold-text">
             melhores frutas
           </span>
-
         </h1>
 
 
         <p class="hero-subtitle">
-
           Compre suas frutas permanentes com segurança,
           atendimento rápido e preços competitivos.
-
         </p>
 
 
@@ -153,8 +198,8 @@
             href="#catalog"
             class="btn btn-primary btn-lg"
           >
-            Ver Catálogo
-            <span>→</span>
+            <span>Ver Catálogo</span>
+            <span aria-hidden="true">→</span>
           </a>
 
           <a
@@ -169,38 +214,34 @@
 
         <!-- STATS -->
 
-        <div class="stats">
+        <div
+          class="stats"
+          aria-label="Informações da loja"
+        >
 
           <div class="stat">
-
             <strong>34+</strong>
-
             <span>Vendas</span>
-
           </div>
 
-
-          <div class="stat-divider"></div>
-
+          <div
+            class="stat-divider"
+            aria-hidden="true"
+          ></div>
 
           <div class="stat">
-
             <strong>100%</strong>
-
             <span>Seguro</span>
-
           </div>
 
-
-          <div class="stat-divider"></div>
-
+          <div
+            class="stat-divider"
+            aria-hidden="true"
+          ></div>
 
           <div class="stat">
-
             <strong>4.8★</strong>
-
             <span>Avaliações</span>
-
           </div>
 
         </div>
@@ -210,13 +251,14 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          CATÁLOGO
-    ====================================================== -->
+    ==================================================== -->
 
     <section
       class="catalog section"
       id="catalog"
+      aria-labelledby="catalog-title"
     >
 
       <div class="container">
@@ -227,7 +269,7 @@
             ESTOQUE ATUALIZADO
           </span>
 
-          <h2>
+          <h2 id="catalog-title">
             Frutas Permanentes
           </h2>
 
@@ -244,19 +286,23 @@
 
           <div class="search-box">
 
-            <span class="search-icon">
+            <span
+              class="search-icon"
+              aria-hidden="true"
+            >
               🔍
             </span>
 
             <input
-              type="text"
+              type="search"
               id="search-input"
               placeholder="Buscar fruta..."
               autocomplete="off"
               aria-label="Buscar fruta"
+              enterkeyhint="search"
             >
 
-            <kbd>
+            <kbd aria-hidden="true">
               Ctrl K
             </kbd>
 
@@ -265,10 +311,14 @@
 
           <div class="select-wrapper">
 
-            <select
-              id="rarity-filter"
-              aria-label="Filtrar por raridade"
+            <label
+              for="rarity-filter"
+              class="sr-only"
             >
+              Filtrar por raridade
+            </label>
+
+            <select id="rarity-filter">
 
               <option value="all">
                 Todas as Raridades
@@ -301,10 +351,14 @@
 
           <div class="select-wrapper">
 
-            <select
-              id="sort-filter"
-              aria-label="Ordenar frutas"
+            <label
+              for="sort-filter"
+              class="sr-only"
             >
+              Ordenar frutas
+            </label>
+
+            <select id="sort-filter">
 
               <option value="default">
                 Ordenar por
@@ -333,6 +387,7 @@
           class="results-count"
           id="results-count"
           aria-live="polite"
+          aria-atomic="true"
         >
           Mostrando todas as frutas
         </div>
@@ -343,6 +398,7 @@
         <div
           class="fruits-grid"
           id="fruits-grid"
+          aria-live="polite"
         ></div>
 
       </div>
@@ -350,13 +406,14 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          COMO COMPRAR
-    ====================================================== -->
+    ==================================================== -->
 
     <section
       class="section info-section"
       id="how-to-buy"
+      aria-labelledby="how-title"
     >
 
       <div class="container">
@@ -367,7 +424,7 @@
             PASSO A PASSO
           </span>
 
-          <h2>
+          <h2 id="how-title">
             Como funciona?
           </h2>
 
@@ -386,7 +443,10 @@
               01
             </span>
 
-            <div class="step-icon">
+            <div
+              class="step-icon"
+              aria-hidden="true"
+            >
               🛒
             </div>
 
@@ -408,7 +468,10 @@
               02
             </span>
 
-            <div class="step-icon">
+            <div
+              class="step-icon"
+              aria-hidden="true"
+            >
               💬
             </div>
 
@@ -430,7 +493,10 @@
               03
             </span>
 
-            <div class="step-icon">
+            <div
+              class="step-icon"
+              aria-hidden="true"
+            >
               💳
             </div>
 
@@ -452,7 +518,10 @@
               04
             </span>
 
-            <div class="step-icon">
+            <div
+              class="step-icon"
+              aria-hidden="true"
+            >
               ⚡
             </div>
 
@@ -474,13 +543,14 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          SEGURANÇA
-    ====================================================== -->
+    ==================================================== -->
 
     <section
       class="section trust-section"
       id="trust"
+      aria-labelledby="trust-title"
     >
 
       <div class="container">
@@ -491,7 +561,7 @@
             GARANTIA
           </span>
 
-          <h2>
+          <h2 id="trust-title">
             Por que confiar na Bolas Store?
           </h2>
 
@@ -502,7 +572,10 @@
 
           <article class="glass-card trust-card">
 
-            <div class="trust-icon">
+            <div
+              class="trust-icon"
+              aria-hidden="true"
+            >
               ⚡
             </div>
 
@@ -520,7 +593,10 @@
 
           <article class="glass-card trust-card">
 
-            <div class="trust-icon">
+            <div
+              class="trust-icon"
+              aria-hidden="true"
+            >
               🔒
             </div>
 
@@ -538,7 +614,10 @@
 
           <article class="glass-card trust-card">
 
-            <div class="trust-icon">
+            <div
+              class="trust-icon"
+              aria-hidden="true"
+            >
               ✨
             </div>
 
@@ -574,9 +653,16 @@
 
         <div>
 
-          <a href="#" class="logo">
+          <a
+            href="#"
+            class="logo"
+            aria-label="Bolas Store — voltar ao início"
+          >
 
-            <span class="logo-icon">
+            <span
+              class="logo-icon"
+              aria-hidden="true"
+            >
               🍎
             </span>
 
@@ -587,10 +673,8 @@
           </a>
 
           <p class="footer-description">
-
             Sua loja de frutas permanentes
             para Blox Fruits.
-
           </p>
 
         </div>
@@ -653,14 +737,36 @@
   </footer>
 
 
-  <!-- TOAST -->
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
 
   <div
     id="toast"
     class="toast"
     role="status"
     aria-live="polite"
+    aria-atomic="true"
   ></div>
+
+
+  <!-- =====================================================
+       ACESSIBILIDADE
+  ====================================================== -->
+
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
 
 
   <script src="script.js"></script>
