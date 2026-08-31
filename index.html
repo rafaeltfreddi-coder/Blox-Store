@@ -2,757 +2,245 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
-
-  <meta
-    name="description"
-    content="Bolas Store — Frutas Permanentes de Blox Fruits com entrega rápida."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Bolas Store — Frutas Permanentes de Blox Fruits com entrega rápida.">
   <meta name="theme-color" content="#050a0f">
-
   <title>Bolas Store — Frutas Blox Fruits</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- =====================================================
-       FUNDO
-  ====================================================== -->
-
+  <!-- FUNDO -->
   <div class="background" aria-hidden="true">
-
     <div class="background-glow glow-1"></div>
     <div class="background-glow glow-2"></div>
     <div class="background-glow glow-3"></div>
-
     <div class="background-grid"></div>
-
-    <div
-      class="particles"
-      id="particles"
-    ></div>
-
-    <div
-      class="floating-fruits"
-      id="floating-fruits"
-    ></div>
-
+    <div class="particles" id="particles"></div>
+    <div class="floating-fruits" id="floating-fruits"></div>
   </div>
 
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
+  <!-- HEADER -->
   <header class="header">
-
     <div class="container header-inner">
-
-      <a
-        href="#"
-        class="logo"
-        aria-label="Bolas Store — voltar ao início"
-      >
-
-        <span
-          class="logo-icon"
-          aria-hidden="true"
-        >🍎</span>
-
-        <span class="logo-name">
-          BOLAS<span>STORE</span>
-        </span>
-
+      <a href="#" class="logo" aria-label="Bolas Store — voltar ao início">
+        <span class="logo-icon" aria-hidden="true">🍎</span>
+        <span class="logo-name">BOLAS<span>STORE</span></span>
       </a>
 
-
-      <nav
-        class="nav"
-        id="nav-menu"
-        aria-label="Navegação principal"
-      >
-
-        <a
-          href="#catalog"
-          class="nav-link"
-        >
-          Catálogo
-        </a>
-
-        <a
-          href="#how-to-buy"
-          class="nav-link"
-        >
-          Como Comprar
-        </a>
-
-        <a
-          href="#trust"
-          class="nav-link"
-        >
-          Segurança
-        </a>
-
+      <nav class="nav" id="nav-menu" aria-label="Navegação principal">
+        <a href="#catalog" class="nav-link">Catálogo</a>
+        <a href="#how-to-buy" class="nav-link">Como Comprar</a>
+        <a href="#trust" class="nav-link">Segurança</a>
       </nav>
 
-
       <div class="header-actions">
+        <!-- BOTÃO TEMA -->
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+          <span class="theme-toggle-text">Tema</span>
+        </button>
 
-        <a
-          href="https://wa.me/5543984036702?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20frutas%20permanentes."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-whatsapp btn-sm"
-          aria-label="Falar com a Bolas Store pelo WhatsApp"
-        >
+        <a href="https://wa.me/5543984036702?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20frutas%20permanentes."
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-whatsapp btn-sm"
+           aria-label="Falar com a Bolas Store pelo WhatsApp">
           <span>WhatsApp</span>
         </a>
 
-
-        <button
-          class="menu-toggle"
-          id="menu-toggle"
-          type="button"
-          aria-label="Abrir menu"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="menu-toggle" id="menu-toggle" type="button"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
         </button>
-
       </div>
-
     </div>
-
   </header>
 
-
-  <!-- =====================================================
-       CONTEÚDO
-  ====================================================== -->
-
   <main>
-
-    <!-- ===================================================
-         HERO
-    ==================================================== -->
-
-    <section
-      class="hero"
-      aria-labelledby="hero-title"
-    >
-
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-content">
-
         <div class="hero-badge">
-
-          <span
-            class="badge-dot"
-            aria-hidden="true"
-          ></span>
-
-          <span>
-            Entrega rápida via Trade
-          </span>
-
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>Entrega rápida via Trade</span>
         </div>
 
-
-        <h1
-          class="hero-title"
-          id="hero-title"
-        >
+        <h1 class="hero-title" id="hero-title">
           Domine os mares com as
-          <span class="gold-text">
-            melhores frutas
-          </span>
+          <span class="gold-text">melhores frutas</span>
         </h1>
-
 
         <p class="hero-subtitle">
           Compre suas frutas permanentes com segurança,
           atendimento rápido e preços competitivos.
         </p>
 
-
         <div class="hero-buttons">
-
-          <a
-            href="#catalog"
-            class="btn btn-primary btn-lg"
-          >
+          <a href="#catalog" class="btn btn-primary btn-lg">
             <span>Ver Catálogo</span>
             <span aria-hidden="true">→</span>
           </a>
-
-          <a
-            href="#how-to-buy"
-            class="btn btn-glass btn-lg"
-          >
-            Como Funciona
-          </a>
-
+          <a href="#how-to-buy" class="btn btn-glass btn-lg">Como Funciona</a>
         </div>
 
-
-        <!-- STATS -->
-
-        <div
-          class="stats"
-          aria-label="Informações da loja"
-        >
-
-          <div class="stat">
-            <strong>34+</strong>
-            <span>Vendas</span>
-          </div>
-
-          <div
-            class="stat-divider"
-            aria-hidden="true"
-          ></div>
-
-          <div class="stat">
-            <strong>100%</strong>
-            <span>Seguro</span>
-          </div>
-
-          <div
-            class="stat-divider"
-            aria-hidden="true"
-          ></div>
-
-          <div class="stat">
-            <strong>4.8★</strong>
-            <span>Avaliações</span>
-          </div>
-
+        <div class="stats" aria-label="Informações da loja">
+          <div class="stat"><strong>34+</strong><span>Vendas</span></div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat"><strong>100%</strong><span>Seguro</span></div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat"><strong>4.8★</strong><span>Avaliações</span></div>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- ===================================================
-         CATÁLOGO
-    ==================================================== -->
-
-    <section
-      class="catalog section"
-      id="catalog"
-      aria-labelledby="catalog-title"
-    >
-
+    <!-- CATÁLOGO -->
+    <section class="catalog section" id="catalog" aria-labelledby="catalog-title">
       <div class="container">
-
         <div class="section-header">
-
-          <span class="section-label">
-            ESTOQUE ATUALIZADO
-          </span>
-
-          <h2 id="catalog-title">
-            Frutas Permanentes
-          </h2>
-
-          <p>
-            Encontre rapidamente a fruta que procura.
-          </p>
-
+          <span class="section-label">ESTOQUE ATUALIZADO</span>
+          <h2 id="catalog-title">Frutas Permanentes</h2>
+          <p>Encontre rapidamente a fruta que procura.</p>
         </div>
-
-
-        <!-- FILTROS -->
 
         <div class="filters">
-
           <div class="search-box">
-
-            <span
-              class="search-icon"
-              aria-hidden="true"
-            >
-              🔍
-            </span>
-
-            <input
-              type="search"
-              id="search-input"
-              placeholder="Buscar fruta..."
-              autocomplete="off"
-              aria-label="Buscar fruta"
-              enterkeyhint="search"
-            >
-
-            <kbd aria-hidden="true">
-              Ctrl K
-            </kbd>
-
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="search-input" placeholder="Buscar fruta..."
+                   autocomplete="off" aria-label="Buscar fruta" enterkeyhint="search">
+            <kbd aria-hidden="true">Ctrl K</kbd>
           </div>
 
-
           <div class="select-wrapper">
-
-            <label
-              for="rarity-filter"
-              class="sr-only"
-            >
-              Filtrar por raridade
-            </label>
-
+            <label for="rarity-filter" class="sr-only">Filtrar por raridade</label>
             <select id="rarity-filter">
-
-              <option value="all">
-                Todas as Raridades
-              </option>
-
-              <option value="Comum">
-                Comum
-              </option>
-
-              <option value="Incomum">
-                Incomum
-              </option>
-
-              <option value="Rara">
-                Rara
-              </option>
-
-              <option value="Lendária">
-                Lendária
-              </option>
-
-              <option value="Mítica">
-                Mítica
-              </option>
-
+              <option value="all">Todas as Raridades</option>
+              <option value="Comum">Comum</option>
+              <option value="Incomum">Incomum</option>
+              <option value="Rara">Rara</option>
+              <option value="Lendária">Lendária</option>
+              <option value="Mítica">Mítica</option>
             </select>
-
           </div>
-
 
           <div class="select-wrapper">
-
-            <label
-              for="sort-filter"
-              class="sr-only"
-            >
-              Ordenar frutas
-            </label>
-
+            <label for="sort-filter" class="sr-only">Ordenar frutas</label>
             <select id="sort-filter">
-
-              <option value="default">
-                Ordenar por
-              </option>
-
-              <option value="price-asc">
-                Menor preço
-              </option>
-
-              <option value="price-desc">
-                Maior preço
-              </option>
-
-              <option value="name">
-                Nome A-Z
-              </option>
-
+              <option value="default">Ordenar por</option>
+              <option value="price-asc">Menor preço</option>
+              <option value="price-desc">Maior preço</option>
+              <option value="name">Nome A-Z</option>
             </select>
-
           </div>
-
         </div>
 
-
-        <div
-          class="results-count"
-          id="results-count"
-          aria-live="polite"
-          aria-atomic="true"
-        >
+        <div class="results-count" id="results-count" aria-live="polite" aria-atomic="true">
           Mostrando todas as frutas
         </div>
 
-
-        <!-- GRID -->
-
-        <div
-          class="fruits-grid"
-          id="fruits-grid"
-          aria-live="polite"
-        ></div>
-
+        <div class="fruits-grid" id="fruits-grid" aria-live="polite"></div>
       </div>
-
     </section>
 
-
-    <!-- ===================================================
-         COMO COMPRAR
-    ==================================================== -->
-
-    <section
-      class="section info-section"
-      id="how-to-buy"
-      aria-labelledby="how-title"
-    >
-
+    <!-- COMO COMPRAR -->
+    <section class="section info-section" id="how-to-buy" aria-labelledby="how-title">
       <div class="container">
-
         <div class="section-header">
-
-          <span class="section-label">
-            PASSO A PASSO
-          </span>
-
-          <h2 id="how-title">
-            Como funciona?
-          </h2>
-
-          <p>
-            Comprar sua fruta é simples e rápido.
-          </p>
-
+          <span class="section-label">PASSO A PASSO</span>
+          <h2 id="how-title">Como funciona?</h2>
+          <p>Comprar sua fruta é simples e rápido.</p>
         </div>
-
 
         <div class="steps">
-
           <article class="glass-card step-card">
-
-            <span class="step-number">
-              01
-            </span>
-
-            <div
-              class="step-icon"
-              aria-hidden="true"
-            >
-              🛒
-            </div>
-
-            <h3>
-              Escolha sua fruta
-            </h3>
-
-            <p>
-              Encontre a fruta desejada no catálogo
-              e clique em comprar.
-            </p>
-
+            <span class="step-number">01</span>
+            <div class="step-icon" aria-hidden="true">🛒</div>
+            <h3>Escolha sua fruta</h3>
+            <p>Encontre a fruta desejada no catálogo e clique em comprar.</p>
           </article>
-
-
           <article class="glass-card step-card">
-
-            <span class="step-number">
-              02
-            </span>
-
-            <div
-              class="step-icon"
-              aria-hidden="true"
-            >
-              💬
-            </div>
-
-            <h3>
-              Fale conosco
-            </h3>
-
-            <p>
-              O pedido será preparado automaticamente
-              para o atendimento via WhatsApp.
-            </p>
-
+            <span class="step-number">02</span>
+            <div class="step-icon" aria-hidden="true">💬</div>
+            <h3>Fale conosco</h3>
+            <p>O pedido será preparado automaticamente para o atendimento via WhatsApp.</p>
           </article>
-
-
           <article class="glass-card step-card">
-
-            <span class="step-number">
-              03
-            </span>
-
-            <div
-              class="step-icon"
-              aria-hidden="true"
-            >
-              💳
-            </div>
-
-            <h3>
-              Faça o pagamento
-            </h3>
-
-            <p>
-              Combine o pagamento com nosso atendimento
-              e confirme seu pedido.
-            </p>
-
+            <span class="step-number">03</span>
+            <div class="step-icon" aria-hidden="true">💳</div>
+            <h3>Faça o pagamento</h3>
+            <p>Combine o pagamento com nosso atendimento e confirme seu pedido.</p>
           </article>
-
-
           <article class="glass-card step-card">
-
-            <span class="step-number">
-              04
-            </span>
-
-            <div
-              class="step-icon"
-              aria-hidden="true"
-            >
-              ⚡
-            </div>
-
-            <h3>
-              Receba no jogo
-            </h3>
-
-            <p>
-              Entramos no servidor e realizamos
-              a entrega através de Trade.
-            </p>
-
+            <span class="step-number">04</span>
+            <div class="step-icon" aria-hidden="true">⚡</div>
+            <h3>Receba no jogo</h3>
+            <p>Entramos no servidor e realizamos a entrega através de Trade.</p>
           </article>
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- ===================================================
-         SEGURANÇA
-    ==================================================== -->
-
-    <section
-      class="section trust-section"
-      id="trust"
-      aria-labelledby="trust-title"
-    >
-
+    <!-- SEGURANÇA -->
+    <section class="section trust-section" id="trust" aria-labelledby="trust-title">
       <div class="container">
-
         <div class="section-header">
-
-          <span class="section-label">
-            GARANTIA
-          </span>
-
-          <h2 id="trust-title">
-            Por que confiar na Bolas Store?
-          </h2>
-
+          <span class="section-label">GARANTIA</span>
+          <h2 id="trust-title">Por que confiar na Bolas Store?</h2>
         </div>
-
 
         <div class="trust-grid">
-
           <article class="glass-card trust-card">
-
-            <div
-              class="trust-icon"
-              aria-hidden="true"
-            >
-              ⚡
-            </div>
-
-            <h3>
-              Entrega rápida
-            </h3>
-
-            <p>
-              Atendimento ágil para que você receba
-              sua fruta o mais rápido possível.
-            </p>
-
+            <div class="trust-icon" aria-hidden="true">⚡</div>
+            <h3>Entrega rápida</h3>
+            <p>Atendimento ágil para que você receba sua fruta o mais rápido possível.</p>
           </article>
-
-
           <article class="glass-card trust-card">
-
-            <div
-              class="trust-icon"
-              aria-hidden="true"
-            >
-              🔒
-            </div>
-
-            <h3>
-              Compra segura
-            </h3>
-
-            <p>
-              Processo transparente com suporte
-              durante toda a compra.
-            </p>
-
+            <div class="trust-icon" aria-hidden="true">🔒</div>
+            <h3>Compra segura</h3>
+            <p>Processo transparente com suporte durante toda a compra.</p>
           </article>
-
-
           <article class="glass-card trust-card">
-
-            <div
-              class="trust-icon"
-              aria-hidden="true"
-            >
-              ✨
-            </div>
-
-            <h3>
-              Preços competitivos
-            </h3>
-
-            <p>
-              Ofertas e preços especiais em diversas
-              frutas permanentes.
-            </p>
-
+            <div class="trust-icon" aria-hidden="true">✨</div>
+            <h3>Preços competitivos</h3>
+            <p>Ofertas e preços especiais em diversas frutas permanentes.</p>
           </article>
-
         </div>
-
       </div>
-
     </section>
-
   </main>
 
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
+  <!-- FOOTER -->
   <footer class="footer">
-
     <div class="container">
-
       <div class="footer-grid">
-
         <div>
-
-          <a
-            href="#"
-            class="logo"
-            aria-label="Bolas Store — voltar ao início"
-          >
-
-            <span
-              class="logo-icon"
-              aria-hidden="true"
-            >
-              🍎
-            </span>
-
-            <span class="logo-name">
-              BOLAS<span>STORE</span>
-            </span>
-
+          <a href="#" class="logo" aria-label="Bolas Store — voltar ao início">
+            <span class="logo-icon" aria-hidden="true">🍎</span>
+            <span class="logo-name">BOLAS<span>STORE</span></span>
           </a>
-
-          <p class="footer-description">
-            Sua loja de frutas permanentes
-            para Blox Fruits.
-          </p>
-
+          <p class="footer-description">Sua loja de frutas permanentes para Blox Fruits.</p>
         </div>
-
-
         <div>
-
-          <h3>
-            Navegação
-          </h3>
-
-          <a href="#catalog">
-            Catálogo
-          </a>
-
-          <a href="#how-to-buy">
-            Como Comprar
-          </a>
-
-          <a href="#trust">
-            Segurança
-          </a>
-
+          <h3>Navegação</h3>
+          <a href="#catalog">Catálogo</a>
+          <a href="#how-to-buy">Como Comprar</a>
+          <a href="#trust">Segurança</a>
         </div>
-
-
         <div>
-
-          <h3>
-            Atendimento
-          </h3>
-
-          <a
-            href="https://wa.me/5543984036702"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-
+          <h3>Atendimento</h3>
+          <a href="https://wa.me/5543984036702" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
-
       </div>
-
-
       <div class="footer-bottom">
-
-        <p>
-          © 2026 Bolas Store. Todos os direitos reservados.
-        </p>
-
-        <p>
-          Não possuímos vínculo com a Roblox Corporation.
-        </p>
-
+        <p>© 2026 Bolas Store. Todos os direitos reservados.</p>
+        <p>Não possuímos vínculo com a Roblox Corporation.</p>
       </div>
-
     </div>
-
   </footer>
 
-
-  <!-- =====================================================
-       TOAST
-  ====================================================== -->
-
-  <div
-    id="toast"
-    class="toast"
-    role="status"
-    aria-live="polite"
-    aria-atomic="true"
-  ></div>
-
-
-  <!-- =====================================================
-       ACESSIBILIDADE
-  ====================================================== -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <style>
     .sr-only {
@@ -768,8 +256,6 @@
     }
   </style>
 
-
   <script src="script.js"></script>
-
 </body>
 </html>
