@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- FUNDO -->
+  <!-- =====================================================
+       FUNDO ANIMADO
+  ====================================================== -->
   <div class="background" aria-hidden="true">
     <div class="background-glow glow-1"></div>
     <div class="background-glow glow-2"></div>
@@ -22,7 +24,9 @@
     <div class="floating-fruits" id="floating-fruits"></div>
   </div>
 
-  <!-- HEADER -->
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
   <header class="header">
     <div class="container header-inner">
       <a href="#" class="logo" aria-label="Bolas Store — voltar ao início">
@@ -37,7 +41,6 @@
       </nav>
 
       <div class="header-actions">
-        <!-- BOTÃO TEMA -->
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
           <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
           <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
@@ -45,7 +48,8 @@
         </button>
 
         <a href="https://wa.me/5543984036702?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20frutas%20permanentes."
-           target="_blank" rel="noopener noreferrer"
+           target="_blank"
+           rel="noopener noreferrer"
            class="btn btn-whatsapp btn-sm"
            aria-label="Falar com a Bolas Store pelo WhatsApp">
           <span>WhatsApp</span>
@@ -53,12 +57,17 @@
 
         <button class="menu-toggle" id="menu-toggle" type="button"
                 aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
   </header>
 
+  <!-- =====================================================
+       CONTEÚDO
+  ====================================================== -->
   <main>
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
@@ -87,11 +96,20 @@
         </div>
 
         <div class="stats" aria-label="Informações da loja">
-          <div class="stat"><strong>34+</strong><span>Vendas</span></div>
+          <div class="stat">
+            <strong>34+</strong>
+            <span>Vendas</span>
+          </div>
           <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat"><strong>100%</strong><span>Seguro</span></div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Seguro</span>
+          </div>
           <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat"><strong>4.8★</strong><span>Avaliações</span></div>
+          <div class="stat">
+            <strong>4.8★</strong>
+            <span>Avaliações</span>
+          </div>
         </div>
       </div>
     </section>
@@ -160,18 +178,21 @@
             <h3>Escolha sua fruta</h3>
             <p>Encontre a fruta desejada no catálogo e clique em comprar.</p>
           </article>
+
           <article class="glass-card step-card">
             <span class="step-number">02</span>
             <div class="step-icon" aria-hidden="true">💬</div>
             <h3>Fale conosco</h3>
             <p>O pedido será preparado automaticamente para o atendimento via WhatsApp.</p>
           </article>
+
           <article class="glass-card step-card">
             <span class="step-number">03</span>
             <div class="step-icon" aria-hidden="true">💳</div>
             <h3>Faça o pagamento</h3>
             <p>Combine o pagamento com nosso atendimento e confirme seu pedido.</p>
           </article>
+
           <article class="glass-card step-card">
             <span class="step-number">04</span>
             <div class="step-icon" aria-hidden="true">⚡</div>
@@ -196,11 +217,13 @@
             <h3>Entrega rápida</h3>
             <p>Atendimento ágil para que você receba sua fruta o mais rápido possível.</p>
           </article>
+
           <article class="glass-card trust-card">
             <div class="trust-icon" aria-hidden="true">🔒</div>
             <h3>Compra segura</h3>
             <p>Processo transparente com suporte durante toda a compra.</p>
           </article>
+
           <article class="glass-card trust-card">
             <div class="trust-icon" aria-hidden="true">✨</div>
             <h3>Preços competitivos</h3>
@@ -211,7 +234,9 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -220,19 +245,24 @@
             <span class="logo-icon" aria-hidden="true">🍎</span>
             <span class="logo-name">BOLAS<span>STORE</span></span>
           </a>
-          <p class="footer-description">Sua loja de frutas permanentes para Blox Fruits.</p>
+          <p class="footer-description">
+            Sua loja de frutas permanentes para Blox Fruits.
+          </p>
         </div>
+
         <div>
           <h3>Navegação</h3>
           <a href="#catalog">Catálogo</a>
           <a href="#how-to-buy">Como Comprar</a>
           <a href="#trust">Segurança</a>
         </div>
+
         <div>
           <h3>Atendimento</h3>
           <a href="https://wa.me/5543984036702" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>© 2026 Bolas Store. Todos os direitos reservados.</p>
         <p>Não possuímos vínculo com a Roblox Corporation.</p>
@@ -240,6 +270,7 @@
     </div>
   </footer>
 
+  <!-- TOAST -->
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <style>
